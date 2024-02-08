@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-dash-api-service
+spec:
+  selector:
+    app: kube-dash-api
+  ports:
+    - protocol: TCP
+      port: 8080  # Replace with the port your Rust API is listening on
+      targetPort: 8080  # Replace with the port your Rust API is listening on

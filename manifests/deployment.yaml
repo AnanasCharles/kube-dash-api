@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-dash-api-deployment
+spec:
+  replicas: 3  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: kube-dash-api
+  template:
+    metadata:
+      labels:
+        app: kube-dash-api
+    spec:
+      containers:
+      - name: kube-dash-api
+        image: localhost:5000/kube-dash-api:0.1  # Replace with your Docker image name and tag
+        ports:
+        - containerPort: 8080  # Replace with the port your Rust API is listening on
