@@ -28,4 +28,5 @@ COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/kube-d
 # Expose the port your application listens on
 EXPOSE 8080
 
-# Command to run the appli
+# Command to run the application
+CMD ["./kube-dash-api"]
